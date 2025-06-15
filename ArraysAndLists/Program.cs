@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ArraysAndLists
 {
@@ -9,19 +10,23 @@ namespace ArraysAndLists
             //TODO:
 
             // Create an int array and populate it with numbers 1-10
-            
+            var numbers = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }; //ask about array length and why to use "var"?
 
             /* Create a list of type int
              * Name the list "evens"
              */
 
-            
+            var evens = new List<int>();
+
+
             /* Create another list of type int
              * Name the list "odds"
              */
             
+            var odds = new List<int>();
 
-             /* Using either a foreach or for loop,
+
+            /* Using either a foreach or for loop,
              * iterate through the array you populated with 10 numbers.
              * Inside the scope of the loop,
              * check to see if each number in the array is even or odd.
@@ -29,16 +34,36 @@ namespace ArraysAndLists
              * If the number is odd, add it to the odds list.
              */
 
+            foreach (int number in numbers) //why "int" here instead of "var"?
+            {
+                if (number % 2 == 0)
+                {
+                    evens.Add(number);
+                }
+                else
+                {
+                    odds.Add(number);
+                }
+            }
+
 
 
             /* Using a foreach loop,
              * display the numbers in your "evens" list
              */
-            
+            foreach (var number in evens) //why "var" here instead of "int"?
+            {
+                Console.WriteLine(number);
+            }
+
 
             /* Using a for loop,
              * display the numbers in your "odds" list
              */
+            for (int i = 0; i <= odds.Count - 1; i++) //could I use "var" here instead of "int"?
+            {
+                Console.WriteLine(odds[i]);
+            }
         }
     }
 }
